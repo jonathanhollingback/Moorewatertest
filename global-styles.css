@@ -1,0 +1,46 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E1E;
+  color: #E0E0E0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282c34;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #909aa9;
+  border-radius: 10px;
+  border: 2px solid #282c34;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #606774;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #909aa9 #282c34;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #282c34;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #909aa9;
+  border-radius: 10px;
+  border: 2px solid #282c34;
+}
+
+body::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #606774;
+}
