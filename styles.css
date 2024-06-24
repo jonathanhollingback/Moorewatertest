@@ -1,0 +1,100 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333; /* Dark gray text */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide horizontal scrollbar on small screens */
+    position: relative;
+    background: url('waves.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: ""; /* Important */
+    z-index: -1; /* Important */
+    position: absolute; /* Change to absolute for proper stacking */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo {
+    max-width: 100px; /* Adjust max-width for smaller screens */
+    height: auto;
+    margin-right: 1rem;
+}
+
+.water-icon {
+    height: 24px; /* Adjust size for smaller screens */
+    width: 24px;
+    background: url('water-icon.png') no-repeat center center;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.attention-grabber {
+    font-size: 2rem; /* Decrease font size for readability on small screens */
+    color: #1e4667; /* Teal color to match button */
+    margin-bottom: 20px; /* Adjust spacing for smaller screens */
+}
+
+.highlight {
+    color: #9b383e; /* Teal color to match button */
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0.8rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+    
+    .brand-logo {
+        max-width: 80px; /* Further reduce max-width for smaller screens */
+    }
+    
+    .water-icon {
+        height: 20px; /* Further reduce size for smaller screens */
+        width: 20px;
+    }
+    
+    .attention-grabber {
+        font-size: 1.5rem; /* Decrease font size further for smaller screens */
+        margin-bottom: 15px; /* Further adjust spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0.6rem 1rem; /* Adjust padding for even smaller screens */
+    }
+    
+    .brand-logo {
+        max-width: 60px; /* Adjust max-width for very small screens */
+    }
+    
+    .water-icon {
+        height: 18px; /* Adjust size for very small screens */
+        width: 18px;
+    }
+    
+    .attention-grabber {
+        font-size: 1.2rem; /* Decrease font size for very small screens */
+        margin-bottom: 10px; /* Further adjust spacing */
+    }
+}

@@ -1,0 +1,74 @@
+/* Styles for yes/no checkboxes */
+.toggle-field {
+    margin-bottom: 1rem; /* Optional: Adjust margin as needed */
+}
+
+/* Label styles */
+.toggle-field label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-size: 1rem;
+}
+
+/* Radio button input styles */
+.toggle-field input[type="radio"] {
+    display: none; /* Hide the actual radio buttons */
+}
+
+/* Custom radio button styles */
+.toggle-field label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Adjust spacing between circle and label */
+    border: 2px solid #CCCCCC; /* Border color */
+    border-radius: 50%; /* Rounded shape for custom radio button */
+    background-color: #FFFFFF; /* Background color */
+    vertical-align: middle; /* Align vertically with label text */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Custom radio button checked styles */
+.toggle-field input[type="radio"]:checked + label:before {
+    background-color: #008080; /* Color when checked */
+    border-color: #008080; /* Border color when checked */
+}
+
+/* Adjust label position */
+.toggle-field label {
+    position: relative;
+    padding-left: 30px; /* Space for custom radio button */
+    cursor: pointer;
+    line-height: 1.8; /* Adjust line height for better alignment */
+}
+
+/* Adjust radio button circle position */
+.toggle-field input[type="radio"] + label:before {
+    left: 0;
+    top: 2px; /* Adjust vertically to center */
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .toggle-field label {
+        font-size: 0.9rem; /* Decrease font size for smaller screens */
+    }
+
+    .form-container {
+        align-items: center; /* Ensure form is centered */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toggle-field label {
+        font-size: 0.8rem; /* Further decrease font size for very small screens */
+    }
+
+    .toggle-field label:before {
+        width: 18px; /* Decrease circle size for very small screens */
+        height: 18px;
+        margin-right: 8px; /* Further adjust spacing for very small screens */
+    }
+}

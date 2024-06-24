@@ -4,41 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Service Name</title>
-    <link rel="stylesheet" href="global-styles.css">
-    <link rel="stylesheet" href="cover-styles.css">
-    <link rel="stylesheet" href="form-styles.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="other.css"> 
+    <link rel="stylesheet" href="form.css"> 
 </head>
 <body>
-    <div class="cover" id="cover">
-        <h1>Welcome to <span>Your Service</span></h1>
-    </div>
+    <header>
+        <div class="water-icon"></div>
+        <img src="moore.png" alt="Brand Logo" class="brand-logo">
+        <!-- Additional header content if needed -->
+    </header>
 
     <div class="form-container" id="form-container">
-        <h2>Contact Us</h2>
-        <form name="contact" method="POST" data-netlify="true" id="contactForm" netlify>
-            <input type="hidden" name="form-name" value="contact">
-            
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <h2 class="attention-grabber">Schedule a <span class="highlight">free</span> water test</h2>
         
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        
-            <button type="submit" class="button-27">Submit</button>
-        </form>
-        
+        <!-- First view of the form -->
+        <div id="form-view-1">
+            <form name="contact" method="POST" data-netlify="true" id="contactForm" netlify>
+                <input type="hidden" name="form-name" value="contact">
+                
+                <div class="name-fields">
+                    <div class="input-container">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <label for="ownHouse">Do you own your house?</label>
+                <div class="toggle-field">
+                    <input type="radio" id="ownHouseYes" name="ownHouse" value="yes" required>
+                    <label for="ownHouseYes">Yes</label>
+                    
+                    <input type="radio" id="ownHouseNo" name="ownHouse" value="no" required>
+                    <label for="ownHouseNo">No</label>
+                </div>
+                
+                <label for="married">Are you married?</label>
+                <div class="toggle-field">
+                    <input type="radio" id="marriedYes" name="married" value="yes" onclick="togglePartnerFields()">
+                    <label for="marriedYes">Yes</label>
+                    
+                    <input type="radio" id="marriedNo" name="married" value="no" onclick="togglePartnerFields()">
+                    <label for="marriedNo">No</label>
+                </div>
+                
+                <button type="button" onclick="showPartnerView()" class="button-27">Next</button>
+            </form>
+        </div>
+
+        <!-- Second view of the form (hidden initially) -->
+        <div id="form-view-2" style="display: none;">
+            <form name="partnerInfo" method="POST" data-netlify="true" id="partnerInfoForm" netlify>
+                <input type="hidden" name="form-name" value="partnerInfo">
+                
+                <!-- Partner's first name and last name fields will be dynamically added here -->
+                <div id="partnerFieldsContainer"></div>
+                
+                <div class="input-container">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="input-container">
+                    <label for="zipCode">Zip Code:</label>
+                    <input type="text" id="zipCode" name="zipCode" required>
+                </div>
+                
+                <div class="input-container">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                
+                <button type="submit" class="button-27">Submit</button>
+                <button type="button" onclick="showMainView()" class="button-27">Back</button>
+            </form>
+        </div>
     </div>
 
-    <a class="scroll-down-arrow" onclick="scrollToContact()">
-        <span>Scroll down to contact us</span>
-        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-    </a>
-    
     <script src="script.js"></script>
 </body>
 </html>

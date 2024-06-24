@@ -1,0 +1,185 @@
+/* Form container */
+.form-container {
+    min-height: calc(100vh - 180px); /* Adjusted min-height to fit below header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Adjusted padding for better spacing */
+    text-align: center;
+    opacity: 0.95; /* Adjusted opacity */
+    transform: translateY(50px);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+.form-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form */
+form {
+    width: 100%; /* Ensure form spans full width */
+    max-width: 800px; /* Increased max-width for wider form */
+    background: #ffffff; /* White background for form */
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    animation: fadeIn 1s ease-in-out;
+    margin: 0 auto; /* Centering the form horizontally */
+}
+
+form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Label styles */
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Input and textarea styles */
+form input,
+form textarea {
+    width: 100%; /* Ensure inputs span full width of the form */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #CCCCCC;
+    background: #F9F9F9;
+    color: #333333;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+form input:focus,
+form textarea:focus {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+form textarea {
+    height: 120px;
+    overflow: auto;
+}
+
+/* Button styles */
+form .button-27 {
+    appearance: none;
+    background-color: #008080;
+    border: 2px solid #006666;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1rem;
+    min-height: 60px;
+    min-width: 200px;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+form .button-27:disabled {
+    pointer-events: none;
+}
+
+form .button-27:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+form .button-27:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Keyframes for form animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem; /* Adjusted padding for smaller screens */
+    }
+
+    form {
+        padding: 1.5rem; /* Adjusted padding for smaller screens */
+    }
+
+    form h2 {
+        font-size: 2rem; /* Decreased font size for smaller screens */
+        margin-bottom: 15px; /* Adjusted margin for smaller screens */
+    }
+
+    form input,
+    form textarea {
+        padding: 0.8rem; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem; /* Decreased font size for smaller screens */
+    }
+
+    form .button-27 {
+        font-size: 14px; /* Decreased font size for smaller screens */
+        min-height: 50px; /* Decreased button height for smaller screens */
+        min-width: 160px; /* Decreased button width for smaller screens */
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-container {
+        min-height: calc(100vh - 120px); /* Adjusted min-height for very small screens */
+    }
+
+    form {
+        max-width: 100%; /* Ensure form spans full width on very small screens */
+    }
+
+    form h2 {
+        font-size: 1.8rem; /* Further decreased font size for very small screens */
+        margin-bottom: 10px; /* Further adjusted margin for very small screens */
+    }
+
+    form input,
+    form textarea {
+        padding: 0.6rem; /* Further adjusted padding for very small screens */
+        font-size: 0.8rem; /* Further decreased font size for very small screens */
+    }
+
+    form .button-27 {
+        min-height: 45px; /* Decreased button height for very small screens */
+        min-width: 140px; /* Decreased button width for very small screens */
+        padding: 10px 16px; /* Further adjusted padding for very small screens */
+    }
+}
